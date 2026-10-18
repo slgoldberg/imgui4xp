@@ -81,6 +81,15 @@ public:
 protected:
     tableDataListTy     tableList;
 public:
+    // Auto-centers on primary display using WindowGeometry::Centered(width, height)
+    ImguiWidget(int width, int height,
+                XPLMWindowDecoration decoration = xplm_WindowDecorationRoundRectangle,
+                XPLMWindowLayer layer = xplm_WindowLayerFloatingWindows);
+    // Modern WindowGeometry constructor
+    ImguiWidget(const WindowGeometry& geometry,
+                XPLMWindowDecoration decoration = xplm_WindowDecorationRoundRectangle,
+                XPLMWindowLayer layer = xplm_WindowLayerFloatingWindows);
+    // Legacy constructor (retained for backward compatibility)
     ImguiWidget(int left, int top, int right, int bot,
                 XPLMWindowDecoration decoration = xplm_WindowDecorationRoundRectangle,
                 XPLMWindowLayer layer = xplm_WindowLayerFloatingWindows);

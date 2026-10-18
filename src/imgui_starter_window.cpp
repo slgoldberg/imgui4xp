@@ -288,6 +288,21 @@ bool ImguiWidget::tableDataTy::contains (const std::string& s) const
 }
 
 
+ImguiWidget::ImguiWidget(int width, int height,
+                         XPLMWindowDecoration decoration,
+                         XPLMWindowLayer layer) :
+    ImguiWidget(WindowGeometry::Centered(width, height), decoration, layer)
+{
+}
+
+ImguiWidget::ImguiWidget(const WindowGeometry& geometry,
+                         XPLMWindowDecoration decoration,
+                         XPLMWindowLayer layer) :
+    ImguiWidget(geometry.left, geometry.top, geometry.right, geometry.bottom, decoration, layer)
+{
+}
+
+
 ImguiWidget::ImguiWidget(int left, int top, int right, int bot,
                          XPLMWindowDecoration decoration,
                          XPLMWindowLayer layer) :
